@@ -33,4 +33,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)  # Make server accessible from the internet
+    app.run(host="0.0.0.0", port=443)  # Make server accessible from the internet
