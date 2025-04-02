@@ -17,6 +17,7 @@ def log_request(req):
     log_data = (f"{req.method} {req.path} - Client IP: {client_ip}:{client_port} - "
                 f"Server IP: {server_ip}:{server_port} - Headers: {dict(req.headers)} - "
                 f"Body: {req.get_data(as_text=True)}")
+    print("log_data: " + str(log_data))
     app.logger.info(log_data)
 
 
@@ -27,6 +28,7 @@ def before_request():
 
 @app.route('/', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def home():
+    log_request(request)
     return "Server is running and logging requests."
 
 
